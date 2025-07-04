@@ -44,7 +44,7 @@
   <build>
     <plugins>
 
-      <!-- Compiler plugin -->
+      <!-- Compiler plugin for Java 11 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -55,7 +55,14 @@
         </configuration>
       </plugin>
 
-      <!-- Dependency plugin to copy jetty-runner -->
+      <!-- WAR plugin to package WAR correctly -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.2</version>
+      </plugin>
+
+      <!-- Dependency plugin to copy Jetty runner -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
@@ -80,7 +87,7 @@
         </executions>
       </plugin>
 
-      <!-- Surefire plugin for unit tests -->
+      <!-- Surefire plugin for running unit tests -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
